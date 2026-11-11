@@ -1,11 +1,11 @@
-# Wild Overdrive (`v1.0.0`) — Chaos Arcade Roguelite & Bullet-Heaven en Flutter
+# Wild Overdrive (`v1.0.1`) — Chaos Arcade Roguelite & Bullet-Heaven en Flutter
 
-**Wild Overdrive (`v1.0.0`)** est un jeu d'arcade roguelite & bullet-heaven néon conçu en Flutter pour Android (`cloud.orbital8.wild_overdrive`), propulsé par un moteur vectoriel 60 FPS (`CustomPainter`) sans aucune dépendance bitmap externe.
+**Wild Overdrive (`v1.0.1`)** est un jeu d'arcade roguelite & bullet-heaven néon conçu en Flutter pour Android (`cloud.orbital8.wild_overdrive`), propulsé par un moteur vectoriel 60 FPS (`CustomPainter`) sans aucune dépendance bitmap externe.
 
-## Téléchargement APK Android (`v1.0.0`)
+## Téléchargement APK Android (`v1.0.1`)
 
-- **Release GitHub `v1.0.0`** : [`https://github.com/orbitalstorm/wild-overdrive/releases/tag/v1.0.0`](https://github.com/orbitalstorm/wild-overdrive/releases/tag/v1.0.0)
-- **Téléchargement direct APK (`wild-overdrive-v1.0.0.apk`)** : [`https://github.com/orbitalstorm/wild-overdrive/releases/download/v1.0.0/wild-overdrive-v1.0.0.apk`](https://github.com/orbitalstorm/wild-overdrive/releases/download/v1.0.0/wild-overdrive-v1.0.0.apk)
+- **Release GitHub `v1.0.1`** : [`https://github.com/orbitalstorm/wild-overdrive/releases/tag/v1.0.1`](https://github.com/orbitalstorm/wild-overdrive/releases/tag/v1.0.1)
+- **Téléchargement direct APK (`wild-overdrive-v1.0.1.apk`)** : [`https://github.com/orbitalstorm/wild-overdrive/releases/download/v1.0.1/wild-overdrive-v1.0.1.apk`](https://github.com/orbitalstorm/wild-overdrive/releases/download/v1.0.1/wild-overdrive-v1.0.1.apk)
 
 ## Fonctionnalités Clés
 

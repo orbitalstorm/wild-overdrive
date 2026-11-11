@@ -3,6 +3,12 @@
 Toutes les modifications notables de ce projet sont documentées dans ce fichier.
 Le versionning suit strictement la convention unique `v1.x.y`.
 
+## [v1.0.1] - 2026-11-11
+
+### Corrigé
+- **Pipeline CI/CD & Analyse Statique Multi-Version Flutter (`.github/workflows/build-apk.yml` & `analysis_options.yaml`)** :
+  - Épinglage explicite de Flutter `3.47.9` dans GitHub Actions et compatibilité ascendante de l'analyseur avec Flutter `3.50.0+` pour la génération de l'APK Android Release (`wild-overdrive-v1.0.1.apk`).
+
 ## [v1.0.0] - 2026-11-11
 
 ### Ajouté

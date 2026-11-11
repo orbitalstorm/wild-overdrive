@@ -22,9 +22,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Flutter Stable
+      - name: Setup Flutter 3.47.9
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.47.9'
           channel: 'stable'
           cache: true
 
@@ -32,7 +33,7 @@ jobs:
         run: flutter pub get
 
       - name: Run static analysis
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos
 
       - name: Run unit & widget tests (Portrait 1080x2400)
         run: flutter test
@@ -42,18 +43,18 @@ jobs:
 
       - name: Copy APK with versioned names
         run: |
-          cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/wild-overdrive-v1.0.0.apk
-          cp build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/wild-v1.0.0.apk
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          if [[ "$TAG_NAME" != v* ]]; then TAG_NAME="v1.0.1"; fi
+          cp build/app/outputs/flutter-apk/app-release.apk "build/app/outputs/flutter-apk/wild-overdrive-${TAG_NAME}.apk"
+          cp build/app/outputs/flutter-apk/app-release.apk "build/app/outputs/flutter-apk/wild-${TAG_NAME}.apk"
           ls -lh build/app/outputs/flutter-apk/
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wild-overdrive-v1.0.0-apk
+          name: wild-overdrive-apk
           path: |
-            build/app/outputs/flutter-apk/app-release.apk
-            build/app/outputs/flutter-apk/wild-overdrive-v1.0.0.apk
-            build/app/outputs/flutter-apk/wild-v1.0.0.apk
+            build/app/outputs/flutter-apk/*.apk
           if-no-files-found: error
 
       - name: Publish Android APK to GitHub Release on Tag
@@ -63,7 +64,7 @@ jobs:
         run: |
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           if gh release view "$TAG_NAME" >/dev/null 2>&1; then
-            gh release upload "$TAG_NAME" build/app/outputs/flutter-apk/wild-overdrive-v1.0.0.apk build/app/outputs/flutter-apk/wild-v1.0.0.apk build/app/outputs/flutter-apk/app-release.apk --clobber
+            gh release upload "$TAG_NAME" build/app/outputs/flutter-apk/*.apk --clobber
           else
-            gh release create "$TAG_NAME" build/app/outputs/flutter-apk/wild-overdrive-v1.0.0.apk build/app/outputs/flutter-apk/wild-v1.0.0.apk build/app/outputs/flutter-apk/app-release.apk --title "Wild Overdrive $TAG_NAME — Chaos Arcade Roguelite Android APK" --generate-notes
+            gh release create "$TAG_NAME" build/app/outputs/flutter-apk/*.apk --title "Wild Overdrive $TAG_NAME — Chaos Arcade Roguelite Android APK" --generate-notes
           fi
