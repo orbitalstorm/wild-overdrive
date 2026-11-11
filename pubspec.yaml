@@ -1,0 +1,21 @@
+name: wild_overdrive
+description: "Wild Overdrive v1.0.0 — Jeu d'arcade roguelite & bullet-heaven néon en Flutter (Mode Furie Sauvage 'GO WILD', 4 Chasseurs Apex, 18 Mutations, 3 Boss Colossaux & Laboratoire Chaos)."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
